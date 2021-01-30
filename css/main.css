@@ -25,9 +25,9 @@ body {
   background-color: #222;
 }
 #main {
-  display: table;        /* 親要素に指定 */
-  width: 100%;
-  overflow: hidden;
+	display: inline-flex;
+	width: 100%;
+	overflow: hidden;
 }
 #holdarea {
   display: table-cell;   /* 子要素セルに指定 */
@@ -35,10 +35,11 @@ body {
   float: left;
 }
 #contents {
+	margin-top: 100px;
   display: table-cell;   /* 子要素セルに指定 */
   margin: 0 150px;
   text-align: -webkit-center;
-  height: 640px;
+  height: 800px;
   width: 320px;
 
 }
@@ -79,6 +80,11 @@ td {
   position:relative;
   z-index:10;
 }
+.blockm{
+	width:20px;
+	height:20px;
+}
+
 
 .i{
   box-shadow:

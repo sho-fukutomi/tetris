@@ -14,6 +14,13 @@ let data = {
     y: 0,
   },
   next: 0,
+  next2: 0,
+  next3: 0,
+  next4: 0,
+  next5: 0,
+  next6: 0,
+  next7: 0,
+
   stock: {
     type: 0,
     stocked: false

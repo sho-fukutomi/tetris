@@ -26,11 +26,18 @@
       </div>
       <div id="main">
         <div id="holdarea">
-          <div id="apptest">
 
-          </div>
+   <br>
+   <div class="block-disp">
+     <h2>Stock</h2>
+     <table>
+       <tr v-for="(b, i) in stockBlock" :key="i">
+         <td v-for="(c, j) in b" :key="j" class="block" :class="c | blockClass"></td>
+       </tr>
+     </table>
+   </div>
         </div>
-        <div id="contents">
+        <div id="contents" style="margin-top: 90px;">
           <table>
             <tr v-for="(b, i) in display" :key="i">
               <td
@@ -43,7 +50,42 @@
           </table>
         </div>
         <div id="nextarea">
-          NEXT
+          <div class="block-disp">
+            <h2>Next</h2>
+            <table>
+              <tr v-for="(b, i) in nextBlock1" :key="i">
+                <td v-for="(c, j) in b" :key="j" class="blockm" :class="c | blockClass"></td>
+              </tr>
+            </table>
+            <table>
+              <tr v-for="(b, i) in nextBlock2" :key="i">
+                <td v-for="(c, j) in b" :key="j" class="blockm" :class="c | blockClass"></td>
+              </tr>
+            </table>
+            <table>
+              <tr v-for="(b, i) in nextBlock3" :key="i">
+                <td v-for="(c, j) in b" :key="j" class="blockm" :class="c | blockClass"></td>
+              </tr>
+            </table>
+            <table>
+              <tr v-for="(b, i) in nextBlock4" :key="i">
+                <td v-for="(c, j) in b" :key="j" class="blockm" :class="c | blockClass"></td>
+              </tr>
+            </table>
+            <table>
+              <tr v-for="(b, i) in nextBlock5" :key="i">
+                <td v-for="(c, j) in b" :key="j" class="blockm" :class="c | blockClass"></td>
+              </tr>
+            </table>
+            <table>
+              <tr v-for="(b, i) in nextBlock6" :key="i">
+                <td v-for="(c, j) in b" :key="j" class="blockm" :class="c | blockClass"></td>
+              </tr>
+            </table>
+          </div>
+
+
+
         </div>
 
 

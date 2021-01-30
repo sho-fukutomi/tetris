@@ -8,7 +8,7 @@ let methods = {
   start() {
     console.log('aaaa');
     this.clear();
-    this.setNext();
+    this.setNext2();
     this.setBlock();
     this.started = true;
     this.startTimer();
@@ -57,14 +57,14 @@ let methods = {
       type: 0,
       stocked: false
     }
-    this.minoset = [];
+    this.minoset = this.makeminoset();
   },
   /*
    * ブロックを配備
    */
   setBlock() {
      //次のブロック設定
-    this.setNext();
+    this.setNext2();
     //ブロック再配置
     this.initBlock();
   },
@@ -103,18 +103,18 @@ let methods = {
   setNext() {
     this.block.type = this.next;
     // this.next = Math.floor(Math.random() * 7) + 1;
-    if(this.minoset.length){
+    if(this.minoset.length ){
     }else {
       this.make1Set();
     }
     this.next = this.minoset[0];
+
     this.minoset.shift();
   },
   make1Set(){
     var addflg = true;
     var tmpmino = 0;
     // var tmpset = [];
-
     this.minoset.push(Math.floor(Math.random() * 7) + 1); // とりあえず最初いれる
      console.log(this.minoset);
     for (var i = 1; i < 7; i++) {
@@ -136,7 +136,57 @@ let methods = {
     // console.log(minoset);
   },
 
+  setNext2(){
+    this.block.type = this.next;
+    console.log('start setNext2');
+    console.log(this.minoset.length);
+    // if (this.minoset.length == 0) {
+    //   this.minoset = this.makeminoset();
+    // }
+    if(this.minoset.length < 14){
+        if (this.minoset.length < 7) {
+          console.log(this.makeminoset());
+          //配列作る、pushする
+          this.minoset.concat(this.makeminoset());
+          console.log(this.minoset);
+        }
+        this.minoset = this.minoset.concat(this.makeminoset());
+      }
+    this.next = this.minoset[0];
+    this.next2 = this.minoset[1];
+    this.next3 = this.minoset[2];
+    this.next4 = this.minoset[3];
+    this.next5 = this.minoset[4];
+    this.next6 = this.minoset[5];
+    this.next5 = this.minoset[6];
+    this.next6 = this.minoset[7];
 
+    this.minoset.shift();
+  },
+  makeminoset(){
+    var addflg = true;
+    var tmpmino = 0;
+    var tmpminoset = [];
+
+    tmpminoset.push(Math.floor(Math.random() * 7) + 1);
+    for (var i = 1; i < 7; i++) {
+      tmpmino = Math.floor(Math.random() * 7) + 1;  // とりあえず候補作る
+      tmpminoset.forEach((item, j) => {　//候補検証
+        if(tmpminoset[j] == tmpmino){
+          addflg = false;
+        }
+      });
+      if (addflg) {
+        tmpminoset.push(tmpmino);
+      }else {
+        // console.log(i);
+        i--;
+      }
+      addflg = true;
+    }
+    return tmpminoset;
+
+  },
 
   /*
    * ストックを設定
@@ -178,13 +228,14 @@ let methods = {
       this.down();
     }
     //ストック
-    else if (event.keyCode === 16) {
+    else if (event.keyCode === 67) {
       this.setStock();
     }
     //左回転
     else if (event.keyCode === 90) {
       this.rotatel();
     }
+    //右回転
     else if (event.keyCode === 88) {
       this.rotater();
     }
