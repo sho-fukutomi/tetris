@@ -1,0 +1,213 @@
+@font-face {
+	font-family: 'ChaserDemo';
+	src: url("font/CHASD.TTF");
+}
+@font-face {
+	font-family: 'LEDBDEV';
+	src: url("font/LEDBOARD.TTF");
+}
+@font-face {
+	font-family: 'Crystal';
+	src: url("font/CrystalItalic-R6A.ttf");
+}
+
+body {
+    display: block;
+    margin: 8px;
+    background-color: #333;
+}
+
+#wrapper{
+  background-color: #333;
+}
+
+#header{
+  background-color: #222;
+}
+#main {
+  display: table;        /* 親要素に指定 */
+  width: 100%;
+  overflow: hidden;
+}
+#holdarea {
+  display: table-cell;   /* 子要素セルに指定 */
+  width: 150px;
+  float: left;
+}
+#contents {
+  display: table-cell;   /* 子要素セルに指定 */
+  margin: 0 150px;
+  text-align: -webkit-center;
+  height: 640px;
+  width: 320px;
+
+}
+#nextarea {
+  display: table-cell;   /* 子要素セルに指定 */
+  float: right;
+  width: 150px;
+}
+#bottom {
+  clear: both;
+  width: 100%;
+  height: 80px;
+  background-color: #222;
+  text-align: center;
+  line-height: 100px;
+}
+#footer {
+  clear: both;
+  width: 100%;
+  height: 50px;
+  background-color: #222;
+}
+.tetlis_matrix{
+  border: solid 1px #000000;
+}
+.title{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  text-align: -webkit-center;
+  color: lightgoldenrodyellow;
+  font-size: 3vh;
+  text-shadow: 0 0 5px #f23dff, 0 0 10px #e40c66, 0 0 20px #fff, 0 0 40px #dea2b8;
+}
+td {
+  width: 32px; /* セルの幅 */
+  height: 32px; /* セルの高さ */
+  background-color: #000; /* 背景色 */
+  /* background: bottom; */
+  position:relative;
+  z-index:10;
+}
+
+.i{
+  box-shadow:
+    inset 0px 0px 14px 5px #64b2f1, inset 0px 0px 14px 14px #fff, 0 0 18px 7px #42fbf2;
+  z-index: 20;
+}
+.o{
+  box-shadow:
+    inset 0px 0px 20px 14px #dcf133,inset 0px 0px 18px 19px #fbffedf5,0 0 18px 7px #faffb0;
+  z-index: 20;
+}
+.t{
+  box-shadow:
+    inset 0px 0px 14px 5px #f321e3, inset 0px 0px 14px 14px #fff, 0 0 18px 7px #f9b5f4;
+  z-index: 20;
+}
+.j{
+  box-shadow:
+    inset 0px 0px 14px 5px #213bf3, inset 0px 0px 14px 14px #fff, 0 0 18px 7px #a8a7ec;
+  z-index: 20;
+}
+.l{
+  box-shadow:
+    inset 0px 0px 14px 5px #f3a921, inset 0px 0px 14px 14px #fff, 0 0 18px 7px #f7c15e;
+
+  z-index: 20;
+}
+.s{
+  box-shadow:
+    inset 0px 0px 14px 5px #21f34e, inset 0px 0px 14px 14px #fff, 0 0 18px 7px #75f1a7;
+  z-index: 20;
+}
+.z{
+  box-shadow:
+    inset 0px 0px 14px 5px #f3219f, inset 0px 0px 14px 14px #fff, 0 0 18px 7px #f18fce;
+  z-index: 20;
+}
+.ghost > td{
+  background-color: #444; /* 背景色 */
+  z-index:10;
+}
+.scorearea{
+  height: 100px;
+}
+.num-disp{
+  font-family:"Bungee Outline", cursive;
+  font-size: 5vh;
+  color: cornsilk;
+  text-shadow:
+  0 0 5px #42ff3d,
+  0 0 10px #0ce412,
+  0 0 20px #fff,
+  0 0 40px #0ff
+}
+.score-num{
+  /* background: #d4b0b0; */
+  font-family:"Bungee Outline", cursive;
+    height: 80px;
+    width: 200px;
+    font-size: 5vh;
+    color: #fff;
+    margin-left: 60px;
+    text-shadow:
+    0 0 5px #42ff3d,
+    0 0 10px #0ce412,
+    0 0 20px #fff,
+    0 0 40px #0ff
+    /* 0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #00ffa1,
+    0 0 150px #0ff */
+}
+
+button{
+  position: relative;
+  height: 60px;
+  width: 200px;
+  margin: 0 35px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background: #111;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.5s;
+  z-index: 1;
+  animation: glow 8s linear infinite;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+}
+button:first-child:hover{
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+}
+button:last-child:hover{
+  background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);
+  background-size: 400%;
+}
+button:first-child:before,
+button:last-child:before{
+  content: '';
+  position: absolute;
+  background: inherit;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border-radius: 50px;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+button:first-child:hover:before,
+button:last-child:hover:before{
+  opacity: 1;
+  z-index: -1;
+}
+button:hover{
+
+}
+@keyframes glow {
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 400%;
+  }
+}

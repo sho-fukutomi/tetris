@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=M+PLUS+Rounded+1c:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
+</style>
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
+    <!-- I'm referring to this code heavily. -->
+    <!-- https://codepen.io/b1san1/pen/VwwZExv -->
+    <meta charset="utf-8">
+    <title>テトリス作るよ</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="header">
+        <div class="title">
+          テトリスやろーぜ
+        </div>
+        <div class="scorearea">
+          <span class="num-disp">
+            <span>Score</span>
+            <span class="score-num">{{score}}</span>
+          </span>
+        </div>
+      </div>
+      <div id="main">
+        <div id="holdarea">
+          <div id="apptest">
+
+          </div>
+        </div>
+        <div id="contents">
+          <table>
+            <tr v-for="(b, i) in display" :key="i">
+              <td
+                v-for="(c, j) in b"
+                :key="j"
+                class="block"
+                :class="c | blockClass"
+              />
+            </tr>
+          </table>
+        </div>
+        <div id="nextarea">
+          NEXT
+        </div>
+
+
+      </div>
+      <div id="bottom">
+        <button v-on:click='start()' class="start">Start</button>
+      </div>
+      <div id="footer">
+        フッター部分
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./js/blocks.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/methods.js"></script>
+    <script src="./js/computed.js"></script>
+    <script src="./js/tetlis.js"></script>
+
+  </body>
+</html>
