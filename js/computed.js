@@ -27,8 +27,23 @@ let computed = {
   /*
    * 次のブロック表示
    */
-  nextBlock() {
+  nextBlock1() {
     return blocks[this.next]
+  },
+  nextBlock2() {
+    return blocks[this.next2]
+  },
+  nextBlock3() {
+    return blocks[this.next3]
+  },
+  nextBlock4() {
+    return blocks[this.next4]
+  },
+  nextBlock5() {
+    return blocks[this.next5]
+  },
+  nextBlock6() {
+    return blocks[this.next6]
   },
   /*
    * ストックブロック表示
