@@ -9,6 +9,8 @@
     <!-- I'm referring to this code heavily. -->
     <!-- https://codepen.io/b1san1/pen/VwwZExv -->
     <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
     <title>テトリス作るよ</title>
   </head>
   <body>
@@ -27,15 +29,15 @@
       <div id="main">
         <div id="holdarea">
 
-   <br>
-   <div class="block-disp">
-     <h2>Stock</h2>
-     <table>
-       <tr v-for="(b, i) in stockBlock" :key="i">
-         <td v-for="(c, j) in b" :key="j" class="block" :class="c | blockClass"></td>
-       </tr>
-     </table>
-   </div>
+          <br>
+          <div class="block-disp">
+            <h2>Stock</h2>
+            <table>
+              <tr v-for="(b, i) in stockBlock" :key="i">
+                <td v-for="(c, j) in b" :key="j" class="block" :class="c | blockClass"></td>
+              </tr>
+            </table>
+          </div>
         </div>
         <div id="contents" style="margin-top: 90px;">
           <table>
@@ -83,26 +85,58 @@
               </tr>
             </table>
           </div>
-
-
-
         </div>
-
-
       </div>
       <div id="bottom">
         <button v-on:click='start()' class="start">Start</button>
       </div>
       <div id="footer">
-        フッター部分
-      </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="./js/blocks.js"></script>
-    <script src="./js/data.js"></script>
-    <script src="./js/methods.js"></script>
-    <script src="./js/computed.js"></script>
-    <script src="./js/tetlis.js"></script>
+        <transition>
+          <div class="discription-area">
+            <div>
+              <span class="button-area">
+                <span class="button_up" v-bind:class='{flash_button:button_up}'>↑</span>
+              </span>
+              <span class="discription_text">ハードドロップ</span>
+            </div>
+            <div>
+              <span class="button-area">
+                <span class="button_left" v-bind:class='{flash_button:button_left}'>←</span>
+                <span class="button_down" v-bind:class='{flash_button:button_down}'>↓</span>
+                <span class="button_right" v-bind:class='{flash_button:button_right}'>→</span>
+              </span>
+              <span class="discription_text">テトリミノの移動</span>
+            </div>
+            <div>
+              <span class="button-area">
+                <span class="button_z" v-bind:class='{flash_button:button_rotatel}'>Z</span>
+              </span>
+              <span class="discription_text">左回転</span>
+            </div>
+            <div>
+              <span class="button-area">
+                <span class="button_x" v-bind:class='{flash_button:button_rotater}'>X</span>
+              </span>
+              <span class="discription_text">右回転(にしたいけど未実装、現状左回転)</span>
+            </div>
+            <div>
+              <span class="button-area">
+                <span class="button_c" v-bind:class='{flash_button:button_stock}'>C</span>
+              </span>
+              <span class="discription_text">ホールド</span>
+            </div>
 
+          </div>
+        </transition>
+      </div>
+
+
+    </div>
   </body>
+  <script src="./js/blocks.js"></script>
+  <script src="./js/data.js"></script>
+  <script src="./js/methods.js"></script>
+  <script src="./js/computed.js"></script>
+  <script src="./js/tetlis.js"></script>
+
 </html>
