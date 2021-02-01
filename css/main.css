@@ -59,7 +59,7 @@ body {
 #footer {
   clear: both;
   width: 100%;
-  height: 50px;
+
   background-color: #222;
 }
 .tetlis_matrix{
@@ -134,10 +134,10 @@ td {
   font-size: 5vh;
   color: cornsilk;
   text-shadow:
-  0 0 5px #42ff3d,
-  0 0 10px #0ce412,
-  0 0 20px #fff,
-  0 0 40px #0ff
+	  0 0 5px #42ff3d,
+	  0 0 10px #0ce412,
+	  0 0 20px #fff,
+	  0 0 40px #0ff
 }
 .score-num{
   /* background: #d4b0b0; */
@@ -148,14 +148,54 @@ td {
     color: #fff;
     margin-left: 60px;
     text-shadow:
-    0 0 5px #42ff3d,
-    0 0 10px #0ce412,
-    0 0 20px #fff,
-    0 0 40px #0ff
+	    0 0 5px #42ff3d,
+	    0 0 10px #0ce412,
+	    0 0 20px #fff,
+	    0 0 40px #0ff
     /* 0 0 80px #0ff,
     0 0 90px #0ff,
     0 0 100px #00ffa1,
     0 0 150px #0ff */
+}
+.discription-area{
+	color: #fff;
+		/* text-shadow:
+		0 0 5px #42ff3d,
+		0 0 10px #0ce412,
+		0 0 20px #fff,
+		0 0 40px #0ff */
+}
+.button-area{
+	font-weight: bold;
+	font-size: x-large;
+	width: 110px;
+	display: inline-block;
+	text-align: center;
+}
+.flash_button{
+	color: #fff;
+	animation-name: flash;
+	animation-duration: 100ms;
+}
+@keyframes flash {
+		from {
+			color: #fff;
+			text-shadow:
+					0px 0px 1px rgb(8 255 67),
+					0px 0px 0px rgb(8 255 67),
+					0px 0px 5px rgb(8 255 67),
+					0px 0px 10px rgb(8 255 67),
+					0px 0px 15px rgb(8 255 67),
+					0px 0px 20px rgb(8 255 67),
+					-5px -5px 5px rgb(255 255 255),
+					5px -5px 5px rgb(255 255 255),
+					-5px 5px 5px rgb(255 255 255),
+					5px 5px 5px rgb(255 255 255);
+		}
+		to {
+			color: #fff;
+			/* text-shadow: 0 0 5px #42ff3d, 0 0 10px #0ce412, 0 0 20px #fff, 0 0 40px #0ff; */
+		}
 }
 
 button{
