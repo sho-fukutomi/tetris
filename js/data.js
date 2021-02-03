@@ -25,6 +25,8 @@ let data = {
     type: 0,
     stocked: false
   } ,
+  mainStyle: {},
+  inneStyle: {},
   started: false,
   gameover: false,
   intervalId: undefined,
