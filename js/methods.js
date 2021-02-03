@@ -58,6 +58,7 @@ let methods = {
       stocked: false
     }
     this.minoset = this.makeminoset();
+    this.block.data = JSON.parse(JSON.stringify(blocks[this.block.type]));
   },
   /*
    * ブロックを配備
@@ -215,7 +216,8 @@ let methods = {
     const h=window.innerHeight - left;
     const contentHeight=document.getElementById("contents").offsetHeight;
     const ratio = h / contentHeight;
-    const top = (contentHeight - contentHeight * ratio) / -2 -30;
+    if(ratio > 1) ratio=1.0
+    const top = (contentHeight - h) / -2  - 20;
      this.mainStyle={
       height: `${h}px`,
      };
@@ -230,33 +232,63 @@ let methods = {
   handleKeydown(event) {
     //右移動
     if (event.keyCode === 39) {
-      this.right();
+      if (this.started) {
+          this.right();
+      }
+
+      this.button_right = true;
+      setTimeout( () => {this.button_right = false}, 300,this);
     }
     //左移動
     else if (event.keyCode === 37) {
-      this.left();
+      if (this.started) {
+        this.left();
+      }
+      this.button_left = true;
+      setTimeout( () => {this.button_left = false}, 300,this);
     }
     //最下移動
     else if (event.keyCode === 38) {
-      this.downBottom();
+      if (this.started) {
+        this.downBottom();
+      }
+      this.button_up = true;
+      setTimeout( () => {this.button_up = false}, 300,this);
     }
     //下移動
     else if (event.keyCode === 40) {
-      this.down();
+      if (this.started) {
+        this.down();
+      }
+      this.button_down = true;
+      setTimeout( () => {this.button_down = false}, 300,this);
     }
     //ストック
     else if (event.keyCode === 67) {
-      this.setStock();
+      if (this.started) {
+        this.setStock();
+      }
+      this.button_stock = true;
+      setTimeout( () => {this.button_stock = false}, 300,this);
     }
     //左回転
     else if (event.keyCode === 90) {
-      this.rotatel();
+      if (this.started) {
+        this.rotatel();
+      }
+      this.button_rotatel = true;
+      setTimeout( () => {this.button_rotatel = false}, 300,this);
     }
     //右回転
     else if (event.keyCode === 88) {
-      this.rotater();
+      if (this.started) {
+        this.rotater();
+      }
+      this.button_rotater = true;
+      setTimeout( () => {this.button_rotater = false}, 300,this);
     }
   },
+
   /*
    * 右移動
    */

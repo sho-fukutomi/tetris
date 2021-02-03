@@ -26,11 +26,19 @@ let data = {
     stocked: false
   } ,
   mainStyle: {},
-  inneStyle: {},
+  innerStyle: {},
   started: false,
   gameover: false,
   intervalId: undefined,
   score: 0,
   level: 1,
-  description: false
+  description: false,
+  button_right:false,
+  button_left:false,
+  button_up:false,
+  button_down:false,
+  button_stock:false,
+  button_rotatel:false,
+  button_rotater:false,
+  in_game:false
 }
