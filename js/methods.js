@@ -209,6 +209,24 @@ let methods = {
     this.resetTimer();
   },
   /*
+   * ゲーム画面サイズ調整
+   */
+  handleResize(event) {
+    const left=[0,"header","bottom","footer"].reduce((left,el)=>left+document.getElementById(el).offsetHeight);
+    const h=window.innerHeight - left;
+    const contentHeight=document.getElementById("contents").offsetHeight;
+    const ratio = h / contentHeight;
+    if(ratio > 1) ratio=1.0
+    const top = (contentHeight - h) / -2  - 20;
+     this.mainStyle={
+      height: `${h}px`,
+     };
+     this.innerStyle={
+       transform: `scale(${ratio})`,
+       top: `${top}px`
+     };
+  },
+  /*
    * キー操作
    */
   handleKeydown(event) {

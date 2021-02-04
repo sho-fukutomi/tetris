@@ -25,9 +25,12 @@ body {
   background-color: #222;
 }
 #main {
-	display: inline-flex;
-	width: 100%;
+  width: 100%;
 	overflow: hidden;
+}
+#main .inner {
+  display: inline-flex;
+  position: relative;
 }
 #holdarea {
   display: table-cell;   /* 子要素セルに指定 */
