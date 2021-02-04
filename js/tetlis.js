@@ -30,6 +30,8 @@ const app = new Vue({
   },
   mounted() {
      window.addEventListener("keydown", this.handleKeydown);
+     window.addEventListener("resize",this.handleResize);
+     this.$nextTick(this.handleResize);
   },
   beforeDestroy() {
     window.removeEventListener("keydown", this.handleKeydown);

@@ -32,6 +32,8 @@ let data = {
     type: 0,
     stocked: false
   } ,
+  mainStyle: {},
+  innerStyle: {},
   started: false,
   gameover: false,
   intervalId: undefined,
