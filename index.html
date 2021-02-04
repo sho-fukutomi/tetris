@@ -5,11 +5,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=M+PLUS+Rounded+1c:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
 </style>
+    <!-- <link rel="stylesheet" href="./css/base.css" type="text/css"> -->
     <link rel="stylesheet" href="./css/main.css" type="text/css">
+    <link rel="stylesheet" href="./css/particles.css" type="text/css">
     <!-- I'm referring to this code heavily. -->
     <!-- https://codepen.io/b1san1/pen/VwwZExv -->
     <meta charset="utf-8">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
 
     <title>テトリス作るよ</title>
   </head>
@@ -85,6 +88,44 @@
               </tr>
             </table>
           </div>
+          <div class="block-disp">
+            <h2>　_</h2>
+            <table>
+              <tr v-for="(b, i) in nextBlock7" :key="i">
+                <td v-for="(c, j) in b" :key="j" class="blockm" :class="c | blockClass"></td>
+              </tr>
+            </table>
+            <table>
+              <tr v-for="(b, i) in nextBlock8" :key="i">
+                <td v-for="(c, j) in b" :key="j" class="blockm" :class="c | blockClass"></td>
+              </tr>
+            </table>
+            <table>
+              <tr v-for="(b, i) in nextBlock9" :key="i">
+                <td v-for="(c, j) in b" :key="j" class="blockm" :class="c | blockClass"></td>
+              </tr>
+            </table>
+            <table>
+              <tr v-for="(b, i) in nextBlock10" :key="i">
+                <td v-for="(c, j) in b" :key="j" class="blockm" :class="c | blockClass"></td>
+              </tr>
+            </table>
+            <table>
+              <tr v-for="(b, i) in nextBlock11" :key="i">
+                <td v-for="(c, j) in b" :key="j" class="blockm" :class="c | blockClass"></td>
+              </tr>
+            </table>
+            <table>
+              <tr v-for="(b, i) in nextBlock12" :key="i">
+                <td v-for="(c, j) in b" :key="j" class="blockm" :class="c | blockClass"></td>
+              </tr>
+            </table>
+          </div>
+
+
+
+
+
         </div>
       </div>
       <div id="bottom">
@@ -130,13 +171,27 @@
         </transition>
       </div>
 
-
     </div>
+    <script src="./js/anime.min.js"></script>
+    <script src="./js/particles.js"></script>
+    <script src="./js/blocks.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/methods.js"></script>
+    <script src="./js/computed.js"></script>
+    <script src="./js/tetlis.js"></script>
+
+    <script>
+        // Initialize a new instance of Particles to disintegrate/integrate the button
+        // var particles = new Particles('.block');
+
+        // Disintegrate the button into particles
+        // particles.disintegrate();
+
+        // particles.integrate(); // would do the opposite
+    </script>
+
+
   </body>
-  <script src="./js/blocks.js"></script>
-  <script src="./js/data.js"></script>
-  <script src="./js/methods.js"></script>
-  <script src="./js/computed.js"></script>
-  <script src="./js/tetlis.js"></script>
+
 
 </html>

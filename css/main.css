@@ -46,7 +46,7 @@ body {
 #nextarea {
   display: table-cell;   /* 子要素セルに指定 */
   float: right;
-  width: 150px;
+  width: 256px;
 }
 #bottom {
   clear: both;
@@ -81,8 +81,8 @@ td {
   z-index:10;
 }
 .blockm{
-	width:20px;
-	height:20px;
+	width:15px;
+	height:15px;
 }
 
 
@@ -197,6 +197,15 @@ td {
 			/* text-shadow: 0 0 5px #42ff3d, 0 0 10px #0ce412, 0 0 20px #fff, 0 0 40px #0ff; */
 		}
 }
+.block-disp{
+	    display: table-cell;
+}
+
+.ghost{
+	box-shadow: inset 0px 0px 20px 14px #808080, inset 0px 0px 18px 19px #d2d2d2f5, 0 0 18px 7px #545454;
+	z-index: 15;
+}
+
 
 button{
   position: relative;
