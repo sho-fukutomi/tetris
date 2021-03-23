@@ -20,6 +20,13 @@ let data = {
   next5: 0,
   next6: 0,
   next7: 0,
+  next8: 0,
+  next9: 0,
+  next10: 0,
+  next11: 0,
+  next12: 0,
+  
+
 
   stock: {
     type: 0,

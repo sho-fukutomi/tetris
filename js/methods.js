@@ -6,7 +6,6 @@ let methods = {
    * ゲーム開始
    */
   start() {
-    console.log('aaaa');
     this.clear();
     this.setNext2();
     this.setBlock();
@@ -146,10 +145,9 @@ let methods = {
     // }
     if(this.minoset.length < 14){
         if (this.minoset.length < 7) {
-          console.log(this.makeminoset());
           //配列作る、pushする
           this.minoset.concat(this.makeminoset());
-          console.log(this.minoset);
+
         }
         this.minoset = this.minoset.concat(this.makeminoset());
       }
@@ -159,8 +157,14 @@ let methods = {
     this.next4 = this.minoset[3];
     this.next5 = this.minoset[4];
     this.next6 = this.minoset[5];
-    this.next5 = this.minoset[6];
-    this.next6 = this.minoset[7];
+    this.next7 = this.minoset[6];
+    this.next8 = this.minoset[7];
+    this.next9 = this.minoset[8];
+    this.next10 = this.minoset[9];
+    this.next11 = this.minoset[10];
+    this.next12 = this.minoset[11];
+    this.next13 = this.minoset[12];
+
 
     this.minoset.shift();
   },
@@ -235,7 +239,6 @@ let methods = {
       if (this.started) {
           this.right();
       }
-
       this.button_right = true;
       setTimeout( () => {this.button_right = false}, 300,this);
     }
@@ -297,6 +300,7 @@ let methods = {
       return;
     }
     this.block.x += 1;
+    this.checkghost();
   },
   /*
    * 左移動
@@ -306,6 +310,7 @@ let methods = {
       return;
     }
     this.block.x -= 1;
+    this.checkghost();
   },
   /*
    * 回転
@@ -327,6 +332,7 @@ let methods = {
       return;
     }
     this.block.data = block;
+    this.checkghost();
   },
   rotater() {
     //O型は回転しない
@@ -345,6 +351,14 @@ let methods = {
       return;
     }
     this.block.data = block;
+    this.checkghost();
+  },
+  checkghost(){
+
+    console.log(this.block.x);
+    console.log(this.block.data);
+
+
   },
   /*
    * 下移動
@@ -452,6 +466,8 @@ let methods = {
         this.score++;
         if(this.score % 10 == 9 ){
           document.querySelector(".score-num").style.fontSize = `8vh`;
+
+
         }else {
           document.querySelector(".score-num").style.fontSize = `5vh`;
         }

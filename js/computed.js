@@ -45,6 +45,25 @@ let computed = {
   nextBlock6() {
     return blocks[this.next6]
   },
+  nextBlock7() {
+    return blocks[this.next7]
+  },
+  nextBlock8() {
+    return blocks[this.next8]
+  },
+  nextBlock9() {
+    return blocks[this.next9]
+  },
+  nextBlock10() {
+    return blocks[this.next10]
+  },
+  nextBlock11() {
+    return blocks[this.next11]
+  },
+  nextBlock12() {
+    return blocks[this.next12]
+  },
+  /*
   /*
    * ストックブロック表示
    */
