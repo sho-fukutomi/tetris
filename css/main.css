@@ -41,7 +41,7 @@ body {
 	margin-top: 100px;
   display: table-cell;   /* 子要素セルに指定 */
   margin: 0 150px;
-  text-align: -webkit-center;
+  /* text-align: -webkit-center; */
   height: 800px;
   width: 320px;
 
@@ -208,7 +208,12 @@ td {
 	box-shadow: inset 0px 0px 20px 14px #808080, inset 0px 0px 18px 19px #d2d2d2f5, 0 0 18px 7px #545454;
 	z-index: 15;
 }
-
+.canvas-wrapper{
+	position: relative;
+}
+.wrap-1{
+	position: absolute;
+}
 
 button{
   position: relative;

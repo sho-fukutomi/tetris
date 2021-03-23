@@ -11,6 +11,8 @@
     <!-- https://codepen.io/b1san1/pen/VwwZExv -->
     <meta charset="utf-8" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script src="https://cdn.rawgit.com/ics-creative/ParticleJS/release/1.0.0/libs/particlejs.min.js"></script>
 
 
     <title>テトリス作るよ</title>
@@ -44,8 +46,10 @@
               </table>
             </div>
           </div>
-          <div id="contents" style="margin-top: 90px">
-            <table>
+          <div id="contents" style="margin-top: 90px" class="canvas-wrapper">
+            <canvas width="320" height="800" id="myCanvas" class="wrap-1">
+            </canvas>
+            <table class="wrap-1">
               <tr v-for="(b, i) in display" :key="i">
                 <td
                   v-for="(c, j) in b"
@@ -213,4 +217,75 @@
   <script src="./js/methods.js"></script>
   <script src="./js/computed.js"></script>
   <script src="./js/tetlis.js"></script>
+
+
+  <script type="text/javascript">
+      // Stageオブジェクトを作成します。表示リストのルートになります。
+    stage = new createjs.Stage("myCanvas");
+
+    // パーティクルシステム作成します。
+    particleSystem = new particlejs.ParticleSystem();
+
+    // パーティクルシステムの描画コンテナーを表示リストに登録します。
+    stage.addChild(particleSystem.container);
+
+    particleSystem.importFromJson(
+
+      {
+          "bgColor": "#00000",
+          "width": 320,
+          "height": 600,
+          "emitFrequency": 300,
+          "startX": 183,
+          "startXVariance": 348,
+          "startY": 665,
+          "startYVariance": 0,
+          "initialDirection": 270,
+          "initialDirectionVariance": 0,
+          "initialSpeed": 50,
+          "initialSpeedVariance": 18.9,
+          "friction": 0.028,
+          "accelerationSpeed": 0,
+          "accelerationDirection": 270,
+          "startScale": 2,
+          "startScaleVariance": 0.83,
+          "finishScale": 2,
+          "finishScaleVariance": 1,
+          "lifeSpan": 14,
+          "lifeSpanVariance": 253,
+          "startAlpha": "1",
+          "startAlphaVariance": "0",
+          "finishAlpha": "0",
+          "finishAlphaVariance": "0",
+          "shapeIdList": [
+              "blur_circle",
+              "circle",
+              "kirakira"
+          ],
+          "startColor": {
+              "hue": 37,
+              "hueVariance": 360,
+              "saturation": "91",
+              "saturationVariance": 0,
+              "luminance": "56",
+              "luminanceVariance": "16"
+          },
+          "blendMode": true,
+          "alphaCurveType": "0",
+          "VERSION": "1.0.0"
+      }
+
+  );
+    // フレームレートの設定
+    createjs.Ticker.framerate = 60;
+    // 定期的に呼ばれる関数を登録
+    createjs.Ticker.on("tick", handleTick);
+    function handleTick() {
+      // パーティクルの発生・更新
+      particleSystem.update();
+
+      // 描画を更新する
+      stage.update();
+    }
+  </script>
 </html>
